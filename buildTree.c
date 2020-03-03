@@ -42,3 +42,22 @@ void makeChildren( Node *parent ) {
 
   return;
 }
+
+//grow the tree for each empty node.
+void growTree(Node *parent)
+{
+  int i;
+  Node *p=parent;
+  if (p->child[0]==NULL)
+  {
+    makeChildren(p);
+  }
+  else
+  {
+    for (i=0;i<4;i++)
+    {
+      growTree(p->child[i]);
+    }
+  }
+  return;
+}
