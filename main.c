@@ -22,6 +22,6 @@ int main( int argc, char **argv ) {
   // print the tree for Gnuplot
 	writeTree( head );
   //free the memory
-  free(head);
+  destroyTree(head);
   return 0;
 }

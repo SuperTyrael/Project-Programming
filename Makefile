@@ -4,9 +4,9 @@
 EXE_DIR = .
 EXE = $(EXE_DIR)/basicQuadtree
 #for origin
-SRC= main.c buildTree.c writeTree.c
-#for test
-#SRC= test.c buildTree.c writeTree.c
+#SRC= main.c buildTree.c writeTree.c destroyTree.c
+#for testTask1
+SRC= testTask1.c buildTree.c writeTree.c destroyTree.c
 
 # generic build details
 
