@@ -1,0 +1,10 @@
+// function definitions
+
+Node *makeNode( double x, double y, int level );
+void makeChildren( Node *parent );
+void writeTree( Node *head );
+void writeNode( FILE *fp, Node *node );
+void printOut( FILE *fp, Node *node );
+void growTree(Node *parent);
+void destroyTree(Node *node);
+void removeChildren(Node *parent);

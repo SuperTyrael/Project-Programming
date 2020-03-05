@@ -3,10 +3,13 @@
 
 EXE_DIR = .
 EXE = $(EXE_DIR)/basicQuadtree
+ifeq ($(task),$(1))
 #for origin
 #SRC= main.c buildTree.c writeTree.c destroyTree.c
 #for testTask1
-SRC= testTask1.c buildTree.c writeTree.c destroyTree.c
+#SRC= testTask1.c buildTree.c writeTree.c destroyTree.c
+#for testTask2
+SRC= testTask2.c buildTree.c writeTree.c destroyTree.c removeChildren.c
 
 # generic build details
 
@@ -29,7 +32,7 @@ $(EXE): $(OBJ)
 # clean up compilation
 
 clean:
-	rm -f $(OBJ) $(EXE)
+	rm -f $(OBJ) $(EXE) quad.out
 
 # dependencies
 

@@ -18,10 +18,7 @@ int main( int argc, char **argv ) {
   // make a tree
   makeChildren( head );
   makeChildren( head->child[1] );
-  growTree(head);
   // print the tree for Gnuplot
 	writeTree( head );
-  //free the memory
-  destroyTree(head);
   return 0;
 }
