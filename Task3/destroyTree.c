@@ -2,7 +2,6 @@
 #include "stdlib.h"
 #include "math.h"
 #include "treeStructure.h"
-#include "destroyTree.h"
 
 void destroyTree(Node *node)
 {

@@ -6,23 +6,28 @@
 #include "buildTree.h"
 #include "writeTree.h"
 #include "destroyTree.h"
+#include "nodeCheck.h"
+#include "removeChildren.h"
 
 // main
 
 int main( int argc, char **argv ) {
 
-  Node *head;
+    Node *head;
 
   // make the head node
-  head = makeNode( 0.0,0.0, 0 );
+    head = makeNode( 0.0,0.0, 0 );
 
   // make a tree
-  makeChildren( head );
-  makeChildren( head->child[1] );
-  growTree(head);
+    makeChildren( head );
+    growTree(head);
+    growTree(head);
+
+    //node value detect
+    adapt(head);
+
   // print the tree for Gnuplot
-  writeTree( head );
-  //free the memory
-  destroyTree(head);
-  return 0;
+	  writeTree( head );
+    destroyTree(head);
+    return 0;
 }

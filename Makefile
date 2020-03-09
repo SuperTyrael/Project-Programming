@@ -3,7 +3,6 @@
 
 EXE_DIR = .
 EXE = $(EXE_DIR)/basicQuadtree
-ifeq ($(task),$(1))
 #for origin
 #SRC= main.c buildTree.c writeTree.c destroyTree.c
 #for testTask1

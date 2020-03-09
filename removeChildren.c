@@ -2,7 +2,6 @@
 #include "stdlib.h"
 #include "math.h"
 #include "treeStructure.h"
-#include "removeChildren.h"
 
 void removeChildren(Node *parent)
 {

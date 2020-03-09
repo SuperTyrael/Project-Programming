@@ -2,6 +2,7 @@
 #include "stdlib.h"
 #include "math.h"
 #include "treeStructure.h"
+#include "nodeValue.h"
 #include "buildTree.h"
 
 
@@ -12,7 +13,7 @@ Node *makeNode( double x, double y, int level ) {
   int i;
 
   Node *node = (Node *)malloc(sizeof(Node));
-
+  node->flag=0;
   node->level = level;
 
   node->xy[0] = x;
@@ -27,6 +28,7 @@ Node *makeNode( double x, double y, int level ) {
 // split a leaf nodes into 4 children
 
 void makeChildren( Node *parent ) {
+  int i;
 
   double x = parent->xy[0];
   double y = parent->xy[1];
@@ -62,4 +64,34 @@ void growTree(Node *parent)
   return;
 }
 
+
+void assignValue(Node *head)
+{
+  int i;
+  Node *p=head;
+  if (p->child[0]==NULL)
+  {
+    if (nodeValue(p, 0.0)>0.5)
+    {
+      p->flag=1;
+    }
+    else if (nodeValue(p,0.0)< (-0.5))
+    {
+     p->flag=-1; 
+    }
+    else
+    {
+      p->flag=0;
+    }
+  }
+  else
+  {
+    for (i=0;i<4;i++)
+    {
+      p->flag=0;
+      assignValue(p->child[i]);
+    }
+  }
+  return;
+}
 
